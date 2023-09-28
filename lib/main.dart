@@ -33,15 +33,14 @@ class Home extends StatelessWidget {
 
   PreferredSize _appBar() {
     return PreferredSize(
-      preferredSize: Size.fromHeight(150),
+      preferredSize: Size.fromHeight(250),
       child: Container(
         decoration: _boxDecoration(),
         child: SafeArea(
           child: Column(
             children: [
               _topBar(),
-              SizedBox(height: 5),
-              // _topicBar(),
+              _topicBar(),
               // _tabBar(),
             ],
           ),
@@ -66,7 +65,7 @@ class Home extends StatelessWidget {
 
   Widget _topBar() {
     return Container(
-      margin: EdgeInsets.only(top: 30),
+      margin: EdgeInsets.only(top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -80,19 +79,36 @@ class Home extends StatelessWidget {
                   )),
               Text('Lain Ysabel',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-              Text('Ready to Learn FSL Today?',
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(222, 165, 83, 1))),
+              Text(
+                'Ready to Learn FSL Today?',
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: const Color.fromARGB(222, 165, 83, 1)),
+              ),
             ],
           ),
           CircleAvatar(
-            radius: 50,
+            radius: 40,
             backgroundImage: AssetImage('assets/image3.png'),
           ),
         ],
       ),
     );
   }
+}
+
+Widget _topicBar() {
+  return Container(
+    margin: EdgeInsets.only(left: 40, right: 40),
+    child: Row(
+      children: [
+        Text('Topics',
+            style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold)),
+        ElevatedButton(
+          onPressed: () => {},
+        ),
+      ],
+    ),
+  );
 }
